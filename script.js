@@ -1,28 +1,26 @@
 let zIndex = 1;
 
 document.querySelectorAll('#image-row img').forEach(el => {
-    let animation;
+    const spring = new Spring({
+        mass: 1,
+        damping: 10,
+        stiffness: 200,
+        restVelocityThreshold: 0.00001,
+        restDisplacementThreshold: 0.00001
+    }, {
+        fromValue: 1,
+        toValue: 1
+    });
+    spring.onUpdate(x => el.style.transform = 'scale(' + x + ')');
+
     el.addEventListener('mouseenter', e => {
         el.style.zIndex = zIndex;
         zIndex++;
 
-        if(animation){
-            animation.reverse();
-        }
-        else {
-            animation = el.animate([
-                {transform: 'scale(1)'},
-                {transform: 'scale(2.5)'}
-            ], {
-                duration: 200,
-                fill: 'both',
-                ease: 'ease-in-out'
-            });
-        }
+        spring.setToValue(2.5);
     });
 
     el.addEventListener('mouseleave', e => {
-        animation.reverse();
+        spring.setToValue(1);
     });
-
 });
