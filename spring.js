@@ -9,7 +9,7 @@
             this._damping = config.damping == null ? 10 : config.damping;
             this._mass = config.mass == null ? 1 : config.mass;
             this._stiffness = config.stiffness == null ? 100 : config.stiffness;
-            this._allowOvershooting = config.allowOvershooting == null ? false : config.allowOvershooting;
+            this._allowOvershooting = config.allowOvershooting == null ? true : config.allowOvershooting;
             this._restVelocityThreshold = config.restVelocityThreshold || 0.001;
             this._restDisplacementThreshold = config.restDisplacementThreshold || 0.001;
 
@@ -82,7 +82,9 @@
                 mass: this._mass,
                 stiffness: this._stiffness,
                 damping: this._damping,
-                allowOvershootieng: this._allowOvershooting
+                allowOvershootieng: this._allowOvershooting,
+                restVelocityThreshold: this._restVelocityThreshold,
+                restDisplacementThreshold: this._restDisplacementThreshold
             }, {
                 fromValue: this._currentValue + _offset,
                 toValue: this._currentValue + _offset
