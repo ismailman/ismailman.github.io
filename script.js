@@ -1,3 +1,5 @@
+import Spring from 'https://omar.dev/simple-performant-harmonic-oscillator/spho.mjs';
+
 let zIndex = 1;
 
 document.querySelectorAll('#image-row img').forEach(el => {
