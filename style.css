@@ -16,3 +16,15 @@ body #image-row img {
     width: 32%;
     position: relative;
 }
+
+strong {
+    font-weight: bold;
+}
+    
+h4 {
+    margin-bottom: 0px;
+}
+
+ul {
+    margin-top: 0px;
+}
