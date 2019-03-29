@@ -4,11 +4,8 @@ let zIndex = 1;
 
 document.querySelectorAll('#image-row img').forEach(el => {
     const spring = new Spring({
-        mass: 1,
-        damping: 10,
-        stiffness: 200,
-        restVelocityThreshold: 0.00001,
-        restDisplacementThreshold: 0.00001
+        bounciness: 1.2,
+        speed: 1.3
     }, {
         fromValue: 1,
         toValue: 1
