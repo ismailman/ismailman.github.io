@@ -1,4 +1,4 @@
-import Spring from 'https://omar.dev/simple-performant-harmonic-oscillator/spho.mjs';
+import Spring from 'https://omar.dev/simple-performant-harmonic-oscillator/spho.js';
 
 let zIndex = 1;
 
